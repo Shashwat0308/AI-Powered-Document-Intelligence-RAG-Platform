@@ -2,4 +2,5 @@ venv/
 .env
 __pycache__/
 *.pyc
-data/vector_store/data/documents/
+data/vector_store/
+data/documents/
