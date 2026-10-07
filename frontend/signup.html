@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create a DocuMind account"
+    >
+
+    <title>Create Account — DocuMind</title>
+
+    <link rel="stylesheet" href="auth.css">
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- BACK TO HOME -->
+
+    <a
+        href="index.html"
+        class="auth-back"
+        title="Back to Home"
+    >
+
+        <span>←</span>
+
+        <span>
+            Back to Home
+        </span>
+
+    </a>
+
+
+    <!-- BRAND -->
+
+    <div class="auth-brand">
+
+        <div class="auth-brand-logo">
+
+            <div class="auth-brand-icon">
+                ✦
+            </div>
+
+            <h1>
+                DocuMind
+            </h1>
+
+        </div>
+
+        <p>
+            AI-Powered Document Intelligence
+        </p>
+
+    </div>
+
+
+    <!-- SIGNUP CARD -->
+
+    <main class="auth-card">
+
+        <h2>
+            Create your account
+        </h2>
+
+        <p class="auth-subtitle">
+            Start working with your documents using AI.
+        </p>
+
+
+        <form
+            class="auth-form"
+            id="signupForm"
+        >
+
+
+            <!-- FULL NAME -->
+
+            <div class="auth-field">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="auth-field">
+
+                <label for="signupEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="auth-field">
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <div class="auth-input-wrapper">
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('signupPassword', this)"
+                        aria-label="Show password"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="auth-field">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="auth-input-wrapper">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('confirmPassword', this)"
+                        aria-label="Show password"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TERMS -->
+
+            <p class="auth-terms">
+
+                By creating an account, you agree to our
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                and
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>.
+
+            </p>
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <button
+                type="submit"
+                class="auth-submit"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <!-- BENEFITS -->
+
+        <div class="signup-benefits">
+
+            <div class="signup-benefit">
+
+                <strong>AI</strong>
+
+                <span>
+                    Powered
+                </span>
+
+            </div>
+
+
+            <div class="signup-benefit">
+
+                <strong>RAG</strong>
+
+                <span>
+                    Retrieval
+                </span>
+
+            </div>
+
+
+            <div class="signup-benefit">
+
+                <strong>PDF</strong>
+
+                <span>
+                    Documents
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <div class="auth-switch">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="auth-security-note">
+
+            <span class="security-check">
+                ✓
+            </span>
+
+            <span>
+                Your account information is handled securely
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =====================================================
+           API CONFIGURATION
+           ===================================================== */
+
+        const API_BASE_URL =
+            "http://127.0.0.1:8000";
+
+
+        /* =====================================================
+           PASSWORD VISIBILITY
+           ===================================================== */
+
+        function togglePassword(id, button) {
+
+            const input =
+                document.getElementById(id);
+
+            if (input.type === "password") {
+
+                input.type = "text";
+
+                button.textContent = "◉";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                input.type = "password";
+
+                button.textContent = "◉";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SIGNUP FORM
+           ===================================================== */
+
+        document
+            .getElementById("signupForm")
+            .addEventListener(
+                "submit",
+                async function(event) {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("fullName")
+                            .value
+                            .trim();
+
+
+                    const email =
+                        document
+                            .getElementById("signupEmail")
+                            .value
+                            .trim();
+
+
+                    const password =
+                        document
+                            .getElementById("signupPassword")
+                            .value;
+
+
+                    const confirmPassword =
+                        document
+                            .getElementById("confirmPassword")
+                            .value;
+
+
+                    /* =========================
+                       CLIENT-SIDE VALIDATION
+                       ========================= */
+
+                    if (
+                        !name ||
+                        !email ||
+                        !password ||
+                        !confirmPassword
+                    ) {
+
+                        alert(
+                            "Please fill in all fields."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (password.length < 8) {
+
+                        alert(
+                            "Password must contain at least 8 characters."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (password !== confirmPassword) {
+
+                        alert(
+                            "Passwords do not match."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* =========================
+                       SUBMIT BUTTON
+                       ========================= */
+
+                    const submitButton =
+                        document.querySelector(
+                            '#signupForm button[type="submit"]'
+                        );
+
+
+                    const originalButtonText =
+                        submitButton.textContent;
+
+
+                    submitButton.disabled = true;
+
+                    submitButton.textContent =
+                        "Creating Account...";
+
+
+                    /* =========================
+                       API REQUEST
+                       ========================= */
+
+                    try {
+
+                        const response =
+                            await fetch(
+                                `${API_BASE_URL}/auth/signup`,
+                                {
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type":
+                                            "application/json"
+                                    },
+
+                                    body: JSON.stringify({
+
+                                        name: name,
+
+                                        email: email,
+
+                                        password: password
+
+                                    })
+                                }
+                            );
+
+
+                        const data =
+                            await response.json();
+
+
+                        /* =========================
+                           API ERROR
+                           ========================= */
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                data.detail ||
+                                "Unable to create account."
+                            );
+
+                        }
+
+
+                        /* =========================
+                           STORE AUTH DATA
+                           ========================= */
+
+                        localStorage.setItem(
+                            "documind_token",
+                            data.access_token
+                        );
+
+
+                        localStorage.setItem(
+                            "documind_user",
+                            JSON.stringify(
+                                data.user
+                            )
+                        );
+
+
+                        /* =========================
+                           SUCCESS
+                           ========================= */
+
+                        alert(
+                            "Account created successfully!"
+                        );
+
+
+                        window.location.href =
+                            "app.html";
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Signup error:",
+                            error
+                        );
+
+
+                        alert(
+                            error.message ||
+                            "Unable to create account. Please try again."
+                        );
+
+
+                    } finally {
+
+                        submitButton.disabled =
+                            false;
+
+
+                        submitButton.textContent =
+                            originalButtonText;
+
+                    }
+
+                }
+            );
+
+
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        function applyAuthTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "documind-theme"
+                );
+
+
+            if (savedTheme) {
+
+                document.documentElement
+                    .setAttribute(
+                        "data-theme",
+                        savedTheme
+                    );
+
+                return;
+
+            }
+
+
+            const prefersDark =
+                window
+                    .matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    )
+                    .matches;
+
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    prefersDark
+                        ? "dark"
+                        : "light"
+                );
+
+        }
+
+
+        applyAuthTheme();
+
+    </script>
+
+
+</body>
+
+</html>

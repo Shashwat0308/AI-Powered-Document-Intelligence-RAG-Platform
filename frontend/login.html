@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Sign in to DocuMind AI Document Intelligence"
+    >
+
+    <title>Login — DocuMind</title>
+
+    <link rel="stylesheet" href="auth.css">
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- BACK TO HOME -->
+
+    <a
+        href="index.html"
+        class="auth-back"
+        title="Back to Home"
+    >
+
+        <span>←</span>
+
+        <span>
+            Back to Home
+        </span>
+
+    </a>
+
+
+    <!-- BRAND -->
+
+    <div class="auth-brand">
+
+        <div class="auth-brand-logo">
+
+            <div class="auth-brand-icon">
+                ✦
+            </div>
+
+            <h1>
+                DocuMind
+            </h1>
+
+        </div>
+
+        <p>
+            AI-Powered Document Intelligence
+        </p>
+
+    </div>
+
+
+    <!-- LOGIN CARD -->
+
+    <main class="auth-card">
+
+        <h2>
+            Welcome back
+        </h2>
+
+        <p class="auth-subtitle">
+            Sign in to continue to your documents.
+        </p>
+
+
+        <form
+            class="auth-form"
+            id="loginForm"
+        >
+
+
+            <!-- EMAIL -->
+
+            <div class="auth-field">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    name="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="auth-field">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <div class="auth-input-wrapper">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('loginPassword', this)"
+                        aria-label="Show password"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONS -->
+
+            <div class="auth-options">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                    >
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+
+                <a
+                    href="#"
+                    class="auth-link"
+                    onclick="forgotPassword(event)"
+                >
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                type="submit"
+                class="auth-submit"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <!-- DIVIDER -->
+
+        <div class="auth-divider">
+
+            <span>
+                OR
+            </span>
+
+        </div>
+
+
+        <!-- DEMO -->
+
+        <a
+            href="app.html"
+            class="auth-demo-btn"
+        >
+            Try without signing in →
+        </a>
+
+
+        <!-- SIGNUP -->
+
+        <div class="auth-switch">
+
+            Don't have an account?
+
+            <a href="signup.html">
+                Create account
+            </a>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="auth-security-note">
+
+            <span class="security-check">
+                ✓
+            </span>
+
+            <span>
+                Secure access to your document workspace
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =====================================================
+           API CONFIGURATION
+           ===================================================== */
+
+        const API_BASE_URL =
+            "http://127.0.0.1:8000";
+
+
+        /* =====================================================
+           PASSWORD VISIBILITY
+           ===================================================== */
+
+        function togglePassword(id, button) {
+
+            const input =
+                document.getElementById(id);
+
+            if (input.type === "password") {
+
+                input.type = "text";
+
+                button.textContent = "◉";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                input.type = "password";
+
+                button.textContent = "◉";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FORGOT PASSWORD
+           ===================================================== */
+
+        function forgotPassword(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Password recovery will be available in a future version."
+            );
+
+        }
+
+
+        /* =====================================================
+           LOGIN FORM
+           ===================================================== */
+
+        document
+            .getElementById("loginForm")
+            .addEventListener(
+                "submit",
+                async function(event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document
+                            .getElementById("loginEmail")
+                            .value
+                            .trim();
+
+
+                    const password =
+                        document
+                            .getElementById("loginPassword")
+                            .value;
+
+
+                    /* =========================
+                       CLIENT-SIDE VALIDATION
+                       ========================= */
+
+                    if (!email || !password) {
+
+                        alert(
+                            "Please enter your email and password."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* =========================
+                       SUBMIT BUTTON
+                       ========================= */
+
+                    const submitButton =
+                        document.querySelector(
+                            '#loginForm button[type="submit"]'
+                        );
+
+
+                    const originalButtonText =
+                        submitButton.textContent;
+
+
+                    submitButton.disabled = true;
+
+                    submitButton.textContent =
+                        "Signing In...";
+
+
+                    /* =========================
+                       API REQUEST
+                       ========================= */
+
+                    try {
+
+                        const response =
+                            await fetch(
+                                `${API_BASE_URL}/auth/login`,
+                                {
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type":
+                                            "application/json"
+                                    },
+
+                                    body: JSON.stringify({
+
+                                        email: email,
+
+                                        password: password
+
+                                    })
+                                }
+                            );
+
+
+                        const data =
+                            await response.json();
+
+
+                        /* =========================
+                           API ERROR
+                           ========================= */
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                data.detail ||
+                                "Invalid email or password."
+                            );
+
+                        }
+
+
+                        /* =========================
+                           STORE AUTH DATA
+                           ========================= */
+
+                        localStorage.setItem(
+                            "documind_token",
+                            data.access_token
+                        );
+
+
+                        localStorage.setItem(
+                            "documind_user",
+                            JSON.stringify(
+                                data.user
+                            )
+                        );
+
+
+                        /* =========================
+                           REMEMBER ME
+                           ========================= */
+
+                        if (
+                            document
+                                .getElementById("rememberMe")
+                                .checked
+                        ) {
+
+                            localStorage.setItem(
+                                "documind_remember_me",
+                                "true"
+                            );
+
+                        } else {
+
+                            localStorage.removeItem(
+                                "documind_remember_me"
+                            );
+
+                        }
+
+
+                        /* =========================
+                           SUCCESS
+                           ========================= */
+
+                        alert(
+                            "Login successful!"
+                        );
+
+
+                        window.location.href =
+                            "app.html";
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Login error:",
+                            error
+                        );
+
+
+                        alert(
+                            error.message ||
+                            "Unable to login. Please try again."
+                        );
+
+
+                    } finally {
+
+                        submitButton.disabled =
+                            false;
+
+
+                        submitButton.textContent =
+                            originalButtonText;
+
+                    }
+
+                }
+            );
+
+
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        function applyAuthTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "documind-theme"
+                );
+
+
+            if (savedTheme) {
+
+                document.documentElement
+                    .setAttribute(
+                        "data-theme",
+                        savedTheme
+                    );
+
+                return;
+
+            }
+
+
+            const prefersDark =
+                window
+                    .matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    )
+                    .matches;
+
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    prefersDark
+                        ? "dark"
+                        : "light"
+                );
+
+        }
+
+
+        applyAuthTheme();
+
+    </script>
+
+
+</body>
+
+</html>

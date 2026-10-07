@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="DocuMind Security"
+    >
+
+    <title>Security — DocuMind</title>
+
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body class="landing-page policy-page">
+
+    <!-- HEADER -->
+
+    <header class="docs-header">
+
+        <a href="index.html" class="docs-home">
+            ← <span></span>
+        </a>
+
+        <div class="docs-brand">
+
+            <div class="docs-logo">
+                ✦
+            </div>
+
+            <div class="docs-brand-text">
+                <h2>DocuMind</h2>
+                <span>Security</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <main class="policy-container">
+
+        <div class="policy-intro">
+
+            <span class="section-badge">
+                SECURITY
+            </span>
+
+            <h1>
+                Security at DocuMind
+            </h1>
+
+            <p>
+                An overview of the security considerations
+                behind the DocuMind document intelligence
+                platform.
+            </p>
+
+        </div>
+
+
+        <!-- SECURITY CARDS -->
+
+        <div class="security-grid">
+
+            <div class="security-card">
+
+                <div class="security-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Controlled API Access
+                </h3>
+
+                <p>
+                    The backend exposes defined API endpoints
+                    for document uploads, document retrieval
+                    and question answering.
+                </p>
+
+            </div>
+
+
+            <div class="security-card">
+
+                <div class="security-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Document Processing
+                </h3>
+
+                <p>
+                    Uploaded documents are processed through
+                    the application's document ingestion
+                    pipeline before being indexed.
+                </p>
+
+            </div>
+
+
+            <div class="security-card">
+
+                <div class="security-icon">
+                    🛡
+                </div>
+
+                <h3>
+                    Context-Based Answers
+                </h3>
+
+                <p>
+                    The RAG workflow retrieves relevant document
+                    content before passing context to the
+                    answer-generation component.
+                </p>
+
+            </div>
+
+
+            <div class="security-card">
+
+                <div class="security-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Component Separation
+                </h3>
+
+                <p>
+                    Document processing, embedding, vector
+                    storage and answer generation are separated
+                    into application services.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <section class="policy-section">
+
+            <h2>Document Security</h2>
+
+            <p>
+                Documents uploaded to a local DocuMind
+                development environment are stored according
+                to the configured application storage settings.
+            </p>
+
+            <p>
+                Access to the local document directory should
+                be restricted appropriately when deploying the
+                application to a shared or production environment.
+            </p>
+
+        </section>
+
+
+        <section class="policy-section">
+
+            <h2>API Security</h2>
+
+            <p>
+                Production deployments should use HTTPS,
+                authentication, authorization and appropriate
+                request validation before exposing the API
+                publicly.
+            </p>
+
+            <p>
+                Development configurations should not
+                automatically be considered production-ready
+                security configurations.
+            </p>
+
+        </section>
+
+
+        <section class="policy-section">
+
+            <h2>AI and Data Processing</h2>
+
+            <p>
+                Depending on the deployment configuration,
+                document information may be processed by an
+                external AI service for answer generation.
+            </p>
+
+            <p>
+                Production deployments should review the
+                applicable AI provider's data handling,
+                retention and privacy controls before processing
+                sensitive documents.
+            </p>
+
+        </section>
+
+
+        <section class="policy-section">
+
+            <h2>Recommended Production Practices</h2>
+
+            <ul class="security-list">
+
+                <li>
+                    Use HTTPS for all production traffic.
+                </li>
+
+                <li>
+                    Require authentication for protected APIs.
+                </li>
+
+                <li>
+                    Validate uploaded files and request sizes.
+                </li>
+
+                <li>
+                    Restrict access to document storage.
+                </li>
+
+                <li>
+                    Keep API keys and secrets outside source code.
+                </li>
+
+                <li>
+                    Regularly update application dependencies.
+                </li>
+
+                <li>
+                    Monitor API access and application errors.
+                </li>
+
+                <li>
+                    Apply appropriate backup and deletion policies.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <div class="security-status">
+
+            <div class="security-status-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Security-conscious architecture
+                </strong>
+
+                <p>
+                    DocuMind separates document ingestion,
+                    retrieval and answer generation into
+                    dedicated components.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="policy-back">
+
+            <a href="index.html">
+                ← Back to DocuMind
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="landing-footer">
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 DocuMind. All rights reserved.
+            </span>
+
+            <div class="footer-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="security.html">
+                    Security
+                </a>
+
+            </div>
+
+            <div class="theme-selector">
+
+                <button
+                    onclick="setTheme('light')"
+                    title="Light mode"
+                >
+                    ☀
+                </button>
+
+                <button
+                    onclick="setTheme('dark')"
+                    title="Dark mode"
+                >
+                    ◐
+                </button>
+
+                <button
+                    onclick="setTheme('system')"
+                    title="System theme"
+                >
+                    ⚙
+                </button>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="landing.js"></script>
+
+</body>
+
+</html>

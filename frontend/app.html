@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="DocuMind AI Document Intelligence and RAG Platform"
+    >
+
+    <title>DocuMind — AI Document Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Brand -->
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                <span>✦</span>
+            </div>
+
+            <div class="brand-text">
+                <h2>DocuMind</h2>
+                <span>RAG Intelligence</span>
+            </div>
+
+        </div>
+
+
+        <!-- New Chat -->
+
+        <button
+            class="new-chat-btn"
+            id="newChatBtn"
+        >
+            <span class="new-chat-icon">＋</span>
+            <span>New conversation</span>
+        </button>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-label">
+                WORKSPACE
+            </div>
+
+            <button class="nav-item active">
+                <span class="nav-icon">◈</span>
+                <span>Document Chat</span>
+            </button>
+
+            <button class="nav-item" id="documentsNavBtn">
+                <span class="nav-icon">▤</span>
+                <span>Documents</span>
+
+                <span
+                    class="nav-count"
+                    id="documentCount"
+                >
+                    0
+                </span>
+            </button>
+
+        </nav>
+
+
+        <!-- Documents -->
+
+        <div class="documents-section">
+
+            <div class="section-title-row">
+
+                <span class="section-title">
+                    INDEXED DOCUMENTS
+                </span>
+
+                <span
+                    class="mini-count"
+                    id="sidebarDocumentCount"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div
+                id="documentList"
+                class="document-list"
+            >
+
+                <div class="empty-documents">
+
+                    <div class="empty-doc-icon">
+                        ▱
+                    </div>
+
+                    <span>
+                        No documents yet
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Sidebar bottom -->
+
+        <div class="sidebar-bottom">
+
+            <div class="connection-card">
+
+                <span class="connection-dot"></span>
+
+                <div>
+                    <strong>System online</strong>
+                    <small>RAG backend connected</small>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-actions">
+
+                <button class="sidebar-action">
+                    ⚙
+                    <span>Settings</span>
+                </button>
+
+                <button class="sidebar-action">
+                    ?
+                    <span>Help</span>
+                </button>
+
+            </div>
+
+            <div class="sidebar-version">
+                DocuMind v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN AREA
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <div class="topbar-left">
+
+    <button
+        class="home-btn"
+        onclick="window.location.href='index.html'"
+        title="Back to Home"
+        aria-label="Back to Home"
+    >
+        ←
+        <span>Home</span>
+    </button>
+
+    <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Open menu"
+    >
+        ☰
+    </button>
+
+    <div>
+
+        <div class="breadcrumb">
+            Workspace
+            <span>/</span>
+            Document Chat
+        </div>
+
+        <h1>
+            Document Intelligence
+        </h1>
+
+    </div>
+
+</div>
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    aria-label="Open menu"
+                >
+                    ☰
+                </button>
+
+                <div>
+
+                    <div class="breadcrumb">
+                        Workspace
+                        <span>/</span>
+                        Document Chat
+                    </div>
+
+                    <h1>
+                        Document Intelligence
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="system-pill">
+
+                    <span class="status-dot"></span>
+
+                    <span>RAG System</span>
+
+                </div>
+
+
+                <button
+                    class="icon-btn"
+                    id="themeBtn"
+                    title="Toggle theme"
+                >
+                    ☾
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        AI
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Workspace</strong>
+
+                        <span>Local environment</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CHAT
+        ========================== -->
+
+        <section class="chat-wrapper">
+
+
+            <!-- Welcome -->
+
+            <div
+                id="welcomeMessage"
+                class="welcome-screen"
+            >
+
+                <div class="welcome-glow"></div>
+
+
+                <div class="welcome-icon">
+                    ✦
+                </div>
+
+
+                <div class="welcome-badge">
+                    AI DOCUMENT INTELLIGENCE
+                </div>
+
+
+                <h2>
+                    Ask your documents
+                    <span>anything.</span>
+                </h2>
+
+
+                <p>
+                    Upload your research papers, reports, notes,
+                    or other documents and let AI find,
+                    understand, and explain the information.
+                </p>
+
+
+                <!-- Upload area -->
+
+                <div class="hero-upload">
+
+                    <div class="hero-upload-icon">
+                        ↑
+                    </div>
+
+                    <div class="hero-upload-content">
+
+                        <strong>
+                            Upload a document
+                        </strong>
+
+                        <span>
+                            PDF files supported
+                        </span>
+
+                    </div>
+
+                    <label
+                        for="fileInput"
+                        class="hero-browse-btn"
+                    >
+                        Browse
+                    </label>
+
+                </div>
+
+
+                <!-- Hidden file input -->
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".pdf,.docx,.txt"
+                    hidden
+                >
+
+
+                <button
+                    id="uploadBtn"
+                    class="hero-upload-btn"
+                >
+                    <span>↑</span>
+                    Upload & Index Document
+                </button>
+
+
+                <!-- Suggestions -->
+
+                <div class="suggestions">
+
+                    <span class="suggestions-label">
+                        TRY ASKING
+                    </span>
+
+                    <div class="suggestion-grid">
+
+                        <button
+                            class="suggestion-card"
+                            data-question="Give me an overview of this paper"
+                        >
+                            <span>✦</span>
+                            <div>
+                                <strong>Summarize a paper</strong>
+                                <small>Get the main ideas and findings</small>
+                            </div>
+                        </button>
+
+
+                        <button
+                            class="suggestion-card"
+                            data-question="What are the main findings?"
+                        >
+                            <span>⌁</span>
+                            <div>
+                                <strong>Find key findings</strong>
+                                <small>Discover important results</small>
+                            </div>
+                        </button>
+
+
+                        <button
+                            class="suggestion-card"
+                            data-question="Explain the methodology"
+                        >
+                            <span>◇</span>
+                            <div>
+                                <strong>Explain methodology</strong>
+                                <small>Understand the approach used</small>
+                            </div>
+                        </button>
+
+
+                        <button
+                            class="suggestion-card"
+                            data-question="What are the main topics discussed?"
+                        >
+                            <span>◈</span>
+                            <div>
+                                <strong>Explore topics</strong>
+                                <small>Find what the document covers</small>
+                            </div>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Messages -->
+
+            <div
+                id="messages"
+                class="messages"
+            ></div>
+
+
+            <!-- Status -->
+
+            <div
+                id="statusMessage"
+                class="status-message"
+            ></div>
+
+
+            <!-- =========================
+                 INPUT AREA
+            ========================== -->
+
+            <div class="composer-container">
+
+                <div class="composer">
+
+                    <button
+                        class="composer-add"
+                        id="composerUploadBtn"
+                        title="Upload document"
+                    >
+                        ＋
+                    </button>
+
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Ask anything about your documents..."
+                        rows="1"
+                    ></textarea>
+
+
+                    <button
+                        id="askBtn"
+                        class="ask-btn"
+                        title="Send question"
+                    >
+
+                        <span>➤</span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="composer-footer">
+
+                    <span>
+                        AI answers are generated from your indexed documents.
+                    </span>
+
+                    <span>
+                        <kbd>Enter</kbd> to send
+                        <span class="footer-separator">•</span>
+                        <kbd>Shift</kbd> + <kbd>Enter</kbd> for new line
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="footer">
+
+            <span>
+                © 2026 DocuMind
+            </span>
+
+            <span class="footer-dot">•</span>
+
+            <span>
+                AI Document Intelligence
+            </span>
+
+            <span class="footer-spacer"></span>
+
+            <span>
+                FastAPI
+            </span>
+
+            <span class="footer-dot">•</span>
+
+            <span>
+                FAISS
+            </span>
+
+            <span class="footer-dot">•</span>
+
+            <span>
+                Gemini
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

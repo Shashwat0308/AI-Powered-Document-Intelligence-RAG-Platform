@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="DocuMind Help Center"
+    >
+
+    <title>Help Center — DocuMind</title>
+
+    <link rel="stylesheet" href="landing.css">
+
+</head>
+
+
+<body class="landing-page help-page">
+
+
+    <!-- HEADER -->
+
+    <header class="docs-header">
+
+        <a
+            href="index.html"
+            class="docs-home"
+        >
+            ← <span>Home</span>
+        </a>
+
+
+        <div class="docs-brand">
+
+            <div class="docs-logo">
+                ✦
+            </div>
+
+            <div class="docs-brand-text">
+
+                <h2>
+                    DocuMind
+                </h2>
+
+                <span>
+                    Help Center
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="help-container">
+
+
+        <!-- HERO -->
+
+        <section class="help-hero">
+
+            <span class="section-badge">
+                HELP CENTER
+            </span>
+
+            <h1>
+                How can we
+                <span>help?</span>
+            </h1>
+
+            <p>
+                Find answers about uploading documents,
+                asking questions, RAG retrieval and using
+                the DocuMind platform.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="help-search">
+
+                <span class="help-search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="helpSearch"
+                    placeholder="Search for help..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="help-categories">
+
+            <button
+                class="help-category active"
+                data-category="all"
+            >
+
+                <span>✦</span>
+
+                <div>
+
+                    <strong>
+                        All Topics
+                    </strong>
+
+                    <small>
+                        Browse everything
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <button
+                class="help-category"
+                data-category="getting-started"
+            >
+
+                <span>→</span>
+
+                <div>
+
+                    <strong>
+                        Getting Started
+                    </strong>
+
+                    <small>
+                        Start using DocuMind
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <button
+                class="help-category"
+                data-category="documents"
+            >
+
+                <span>▤</span>
+
+                <div>
+
+                    <strong>
+                        Documents
+                    </strong>
+
+                    <small>
+                        Upload & indexing
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <button
+                class="help-category"
+                data-category="ai"
+            >
+
+                <span>◇</span>
+
+                <div>
+
+                    <strong>
+                        AI & RAG
+                    </strong>
+
+                    <small>
+                        Questions & answers
+                    </small>
+
+                </div>
+
+            </button>
+
+
+            <button
+                class="help-category"
+                data-category="account"
+            >
+
+                <span>◎</span>
+
+                <div>
+
+                    <strong>
+                        Account
+                    </strong>
+
+                    <small>
+                        Login & signup
+                    </small>
+
+                </div>
+
+            </button>
+
+        </section>
+
+
+        <!-- FAQ -->
+
+        <section class="faq-section">
+
+            <div class="faq-header">
+
+                <div>
+
+                    <span class="section-label">
+                        FREQUENTLY ASKED QUESTIONS
+                    </span>
+
+                    <h2>
+                        Common questions
+                    </h2>
+
+                </div>
+
+                <span
+                    class="faq-count"
+                    id="faqCount"
+                >
+                    8 questions
+                </span>
+
+            </div>
+
+
+            <div
+                class="faq-list"
+                id="faqList"
+            >
+
+
+                <!-- FAQ 1 -->
+
+                <article
+                    class="faq-item"
+                    data-category="getting-started"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            How do I get started with DocuMind?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Open the Document Intelligence
+                            workspace, upload a supported PDF,
+                            wait for it to be indexed and then
+                            ask questions about the document.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 2 -->
+
+                <article
+                    class="faq-item"
+                    data-category="documents"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            What type of documents can I upload?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            The current version of DocuMind
+                            supports PDF documents, including
+                            research papers, reports and
+                            technical documentation.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 3 -->
+
+                <article
+                    class="faq-item"
+                    data-category="documents"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            What happens after I upload a document?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            DocuMind extracts the document text,
+                            divides it into smaller chunks,
+                            generates embeddings and stores the
+                            resulting information in the vector
+                            index for retrieval.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 4 -->
+
+                <article
+                    class="faq-item"
+                    data-category="ai"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            How does DocuMind answer my questions?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            DocuMind uses Retrieval-Augmented
+                            Generation (RAG). It first searches
+                            the indexed documents for relevant
+                            content and then uses that retrieved
+                            context to generate an answer.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 5 -->
+
+                <article
+                    class="faq-item"
+                    data-category="ai"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            Can I ask questions in natural language?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Yes. You can ask questions naturally,
+                            such as "What is this paper about?"
+                            or "What methodology was used?"
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 6 -->
+
+                <article
+                    class="faq-item"
+                    data-category="ai"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            Where do the answers come from?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Answers are generated using relevant
+                            content retrieved from your indexed
+                            documents. The interface can also show
+                            the document and page associated with
+                            retrieved sources.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 7 -->
+
+                <article
+                    class="faq-item"
+                    data-category="account"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            Do I need an account to try DocuMind?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            The current demo can be opened using
+                            the "Try without signing in" option
+                            from the landing page.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FAQ 8 -->
+
+                <article
+                    class="faq-item"
+                    data-category="account"
+                >
+
+                    <button class="faq-question">
+
+                        <span>
+                            How can I return to the home page?
+                        </span>
+
+                        <span class="faq-icon">
+                            +
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+
+                        <p>
+                            Use the Back to Home button in the
+                            top-left corner of the page. It is
+                            available throughout the DocuMind
+                            informational pages.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NO RESULTS -->
+
+                <div
+                    class="faq-no-results"
+                    id="faqNoResults"
+                >
+
+                    <div>
+                        ⌕
+                    </div>
+
+                    <h3>
+                        No results found
+                    </h3>
+
+                    <p>
+                        Try searching with different keywords.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK LINKS -->
+
+        <section class="help-links-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    QUICK LINKS
+                </span>
+
+                <h2>
+                    Need something else?
+                </h2>
+
+            </div>
+
+
+            <div class="help-links-grid">
+
+
+                <a
+                    href="documentation.html"
+                    class="help-link-card"
+                >
+
+                    <span class="help-link-icon">
+                        ▤
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Documentation
+                        </strong>
+
+                        <p>
+                            Learn how the platform works.
+                        </p>
+
+                    </div>
+
+                    <span class="help-link-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="security.html"
+                    class="help-link-card"
+                >
+
+                    <span class="help-link-icon">
+                        ◈
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Security
+                        </strong>
+
+                        <p>
+                            Learn about DocuMind security.
+                        </p>
+
+                    </div>
+
+                    <span class="help-link-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="privacy.html"
+                    class="help-link-card"
+                >
+
+                    <span class="help-link-icon">
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Privacy
+                        </strong>
+
+                        <p>
+                            Understand how information is handled.
+                        </p>
+
+                    </div>
+
+                    <span class="help-link-arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="app.html"
+                    class="help-link-card"
+                >
+
+                    <span class="help-link-icon">
+                        ✦
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Open DocuMind
+                        </strong>
+
+                        <p>
+                            Start working with your documents.
+                        </p>
+
+                    </div>
+
+                    <span class="help-link-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="help-cta">
+
+            <div>
+
+                <span class="section-label">
+                    READY TO START?
+                </span>
+
+                <h2>
+                    Start asking your
+                    <span>documents.</span>
+                </h2>
+
+                <p>
+                    Upload a document and explore DocuMind.
+                </p>
+
+            </div>
+
+
+            <a
+                href="app.html"
+                class="help-cta-button"
+            >
+                Open Document Intelligence →
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="landing-footer">
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 DocuMind. All rights reserved.
+            </span>
+
+
+            <div class="footer-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="security.html">
+                    Security
+                </a>
+
+            </div>
+
+
+            <div class="theme-selector">
+
+                <button
+                    onclick="setTheme('light')"
+                    title="Light mode"
+                >
+                    ☀
+                </button>
+
+                <button
+                    onclick="setTheme('dark')"
+                    title="Dark mode"
+                >
+                    ◐
+                </button>
+
+                <button
+                    onclick="setTheme('system')"
+                    title="System theme"
+                >
+                    ⚙
+                </button>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="landing.js"></script>
+
+
+    <script>
+
+        /* =====================================================
+           FAQ ACCORDION
+           ===================================================== */
+
+        const faqQuestions =
+            document.querySelectorAll(
+                ".faq-question"
+            );
+
+
+        faqQuestions.forEach(question => {
+
+            question.addEventListener(
+                "click",
+                () => {
+
+                    const item =
+                        question.closest(
+                            ".faq-item"
+                        );
+
+                    const isOpen =
+                        item.classList.contains(
+                            "open"
+                        );
+
+
+                    document
+                        .querySelectorAll(
+                            ".faq-item.open"
+                        )
+                        .forEach(openItem => {
+
+                            openItem.classList.remove(
+                                "open"
+                            );
+
+                        });
+
+
+                    if (!isOpen) {
+
+                        item.classList.add(
+                            "open"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           CATEGORY FILTER
+           ===================================================== */
+
+        const categoryButtons =
+            document.querySelectorAll(
+                ".help-category"
+            );
+
+        const faqItems =
+            document.querySelectorAll(
+                ".faq-item"
+            );
+
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    categoryButtons.forEach(
+                        btn => {
+                            btn.classList.remove(
+                                "active"
+                            );
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    const category =
+                        button.dataset.category;
+
+
+                    faqItems.forEach(item => {
+
+                        if (
+                            category === "all" ||
+                            item.dataset.category ===
+                                category
+                        ) {
+
+                            item.style.display =
+                                "";
+
+                        } else {
+
+                            item.style.display =
+                                "none";
+
+                            item.classList.remove(
+                                "open"
+                            );
+
+                        }
+
+                    });
+
+
+                    updateFAQCount();
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           SEARCH
+           ===================================================== */
+
+        const searchInput =
+            document.getElementById(
+                "helpSearch"
+            );
+
+        const noResults =
+            document.getElementById(
+                "faqNoResults"
+            );
+
+
+        searchInput.addEventListener(
+            "input",
+            () => {
+
+                const query =
+                    searchInput.value
+                        .trim()
+                        .toLowerCase();
+
+
+                let visibleCount = 0;
+
+
+                faqItems.forEach(item => {
+
+                    const text =
+                        item.textContent
+                            .toLowerCase();
+
+
+                    const matches =
+                        text.includes(query);
+
+
+                    if (matches) {
+
+                        item.style.display =
+                            "";
+
+                        visibleCount++;
+
+                    } else {
+
+                        item.style.display =
+                            "none";
+
+                        item.classList.remove(
+                            "open"
+                        );
+
+                    }
+
+                });
+
+
+                noResults.style.display =
+                    visibleCount === 0
+                        ? "block"
+                        : "none";
+
+
+                updateFAQCount();
+
+            }
+        );
+
+
+        /* =====================================================
+           FAQ COUNT
+           ===================================================== */
+
+        function updateFAQCount() {
+
+            const visibleItems =
+                Array.from(faqItems)
+                    .filter(item =>
+                        item.style.display !==
+                        "none"
+                    );
+
+
+            document.getElementById(
+                "faqCount"
+            ).textContent =
+                `${visibleItems.length} ${
+                    visibleItems.length === 1
+                        ? "question"
+                        : "questions"
+                }`;
+
+        }
+
+
+        /* =====================================================
+           THEME
+           ===================================================== */
+
+        function applyHelpTheme() {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "documind-theme"
+                );
+
+
+            if (savedTheme) {
+
+                document.documentElement
+                    .setAttribute(
+                        "data-theme",
+                        savedTheme
+                    );
+
+                return;
+
+            }
+
+
+            const prefersDark =
+                window
+                    .matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    )
+                    .matches;
+
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    prefersDark
+                        ? "dark"
+                        : "light"
+                );
+
+        }
+
+
+        applyHelpTheme();
+
+    </script>
+
+</body>
+
+</html>

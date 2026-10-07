@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocuMind — AI Document Intelligence</title>
+
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body class="landing-page">
+
+    <!-- NAVBAR -->
+
+    <nav class="landing-nav">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>DocuMind</h2>
+                <span>RAG Intelligence</span>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+
+            <button
+                class="nav-login"
+                onclick="window.location.href='login.html'"
+            >
+                Login
+            </button>
+
+            <button
+                class="nav-signup"
+                onclick="window.location.href='signup.html'"
+            >
+                Sign Up
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    ✦ AI-Powered Document Intelligence
+                </div>
+
+                <h1>
+                    Talk to your
+                    <span>documents.</span>
+                </h1>
+
+                <p>
+                    Upload PDFs and ask questions in natural language.
+                    DocuMind retrieves the most relevant information
+                    and generates answers directly from your documents.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        onclick="openApp()"
+                    >
+                        Get Started
+                        <span>→</span>
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="openApp()"
+                    >
+                        Try without signing in
+                    </button>
+
+                </div>
+
+                <div class="hero-note">
+                    No account required for the demo
+                </div>
+
+            </div>
+
+
+            <!-- HERO VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="floating-card card-top">
+
+                    <span class="mini-icon">📄</span>
+
+                    <div>
+                        <strong>research.pdf</strong>
+                        <small>Indexed successfully</small>
+                    </div>
+
+                    <span class="success">✓</span>
+
+                </div>
+
+
+                <div class="ai-window">
+
+                    <div class="window-header">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>DocuMind AI</span>
+
+                    </div>
+
+
+                    <div class="demo-chat">
+
+                        <div class="demo-question">
+                            What is this research paper about?
+                        </div>
+
+                        <div class="demo-answer">
+
+                            <div class="demo-ai">
+                                AI
+                            </div>
+
+                            <p>
+                                The paper discusses the proposed
+                                methodology, experimental results,
+                                and key findings from the research.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card card-bottom">
+
+                    <span class="mini-icon">✦</span>
+
+                    <div>
+                        <strong>5 sources found</strong>
+                        <small>Relevant document context</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST / STATS -->
+
+        <section class="stats">
+
+            <div>
+                <strong>AI</strong>
+                <span>Powered Answers</span>
+            </div>
+
+            <div>
+                <strong>PDF</strong>
+                <span>Document Support</span>
+            </div>
+
+            <div>
+                <strong>RAG</strong>
+                <span>Context Retrieval</span>
+            </div>
+
+            <div>
+                <strong>24/7</strong>
+                <span>Document Access</span>
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section
+            id="features"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    FEATURES
+                </span>
+
+                <h2>
+                    Everything you need to
+                    <span>understand documents.</span>
+                </h2>
+
+                <p>
+                    A complete AI-powered workspace for
+                    searching, understanding and interacting
+                    with your documents.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ↑
+                    </div>
+
+                    <h3>Smart Upload</h3>
+
+                    <p>
+                        Upload your documents and automatically
+                        extract, clean and index their content.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ✦
+                    </div>
+
+                    <h3>RAG Search</h3>
+
+                    <p>
+                        Retrieve relevant document context
+                        before generating an answer.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ◉
+                    </div>
+
+                    <h3>Source References</h3>
+
+                    <p>
+                        See the document and page associated
+                        with the information used in an answer.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Natural Questions</h3>
+
+                    <p>
+                        Ask questions naturally instead of
+                        manually searching through long documents.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section
+            id="how-it-works"
+            class="section workflow-section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    HOW IT WORKS
+                </span>
+
+                <h2>
+                    From document to
+                    <span>answer.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="workflow">
+
+                <div class="workflow-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>Upload</h3>
+
+                    <p>
+                        Upload your PDF document.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-line"></div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>Process</h3>
+
+                    <p>
+                        Text is extracted, cleaned
+                        and converted into embeddings.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-line"></div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>Retrieve</h3>
+
+                    <p>
+                        Relevant document chunks
+                        are retrieved using vector search.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-line"></div>
+
+
+                <div class="workflow-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <h3>Answer</h3>
+
+                    <p>
+                        The AI generates an answer
+                        using the retrieved context.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta-section">
+
+            <div>
+
+                <span class="section-label">
+                    READY TO START?
+                </span>
+
+                <h2>
+                    Turn your documents into
+                    <span>knowledge.</span>
+                </h2>
+
+                <p>
+                    Upload a document and start asking questions.
+                </p>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="openApp()"
+            >
+                Try DocuMind
+                <span>→</span>
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer
+        id="about"
+        class="landing-footer"
+    >
+
+        <div class="footer-main">
+
+
+            <!-- FOOTER BRAND -->
+
+            <div class="footer-brand">
+
+                <div class="brand">
+
+                    <div class="brand-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <h2>DocuMind</h2>
+                        <span>RAG Intelligence</span>
+                    </div>
+
+                </div>
+
+                <p>
+                    AI-powered document intelligence
+                    for faster and smarter information retrieval.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUCT -->
+
+            <div class="footer-column">
+
+                <h4>Product</h4>
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#how-it-works">
+                    How it works
+                </a>
+
+                <a href="app.html">
+                    Document Intelligence
+                </a>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div class="footer-column">
+
+                <h4>Account</h4>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Create account
+                </a>
+
+                <a href="app.html">
+                    Try without signing in
+                </a>
+
+            </div>
+
+
+            <!-- RESOURCES -->
+
+            <div class="footer-column">
+
+                <h4>Resources</h4>
+
+                <a href="documentation.html">
+                    Documentation
+                </a>
+
+                <a
+                    href="http://127.0.0.1:8000/docs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    API
+                </a>
+
+               <a href="help.html">Help Center</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 DocuMind. All rights reserved.
+            </span>
+
+
+            <div class="footer-links">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="security.html">
+                    Security
+                </a>
+
+            </div>
+
+
+            <!-- THEME SELECTOR -->
+
+            <div class="theme-selector">
+
+                <button
+                    onclick="setTheme('light')"
+                    title="Light mode"
+                >
+                    ☀
+                </button>
+
+                <button
+                    onclick="setTheme('dark')"
+                    title="Dark mode"
+                >
+                    ◐
+                </button>
+
+                <button
+                    onclick="setTheme('system')"
+                    title="System theme"
+                >
+                    ⚙
+                </button>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="landing.js"></script>
+
+</body>
+
+</html>
